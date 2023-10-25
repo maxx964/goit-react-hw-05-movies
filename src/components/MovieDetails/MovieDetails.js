@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import styles from './MovieDetails.module.css';
 import { Link } from 'react-router-dom';
-import Cast from 'components/Cast/Cast'; // Імпортуємо компонент Cast
-import Reviews from 'components/Reviews/Reviews'; // Імпортуємо компонент Reviews
+import Cast from 'components/Cast/Cast'; 
+import Reviews from 'components/Reviews/Reviews'; 
+
+import styles from './MovieDetails.module.css';
 
 
 const MovieDetails = () => {
