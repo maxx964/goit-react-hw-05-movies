@@ -18,19 +18,19 @@ const MovieDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Отримання інформації про фільм
+   
         const movieDetailsResponse = await axios.get(
           `https://api.themoviedb.org/3/movie/${movieId}?api_key=9a4b9e4760b7564e10a80d0c72f50665`
         );
         setMovieDetails(movieDetailsResponse.data);
 
-        // Отримання інформації про акторський склад
+  
         const castResponse = await axios.get(
           `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=9a4b9e4760b7564e10a80d0c72f50665`
         );
         setCast(castResponse.data.cast);
 
-        // Отримання фото акторів
+ 
         const photosData = {};
         await Promise.all(
           castResponse.data.cast.map(async (actor) => {
@@ -44,7 +44,7 @@ const MovieDetails = () => {
         );
         setActorPhotosData(photosData);
 
-        // Отримання відгуків
+  
         const reviewsResponse = await axios.get(
           `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=9a4b9e4760b7564e10a80d0c72f50665`
         );
@@ -77,8 +77,8 @@ const MovieDetails = () => {
       <p>Rating: {movieDetails.vote_average}</p>
       <p>Overview: {movieDetails.overview}</p>
 
-      <Cast cast={cast} actorPhotosData={actorPhotosData} /> {/* Використовуємо компонент Cast */}
-      <Reviews reviews={reviews} /> {/* Використовуємо компонент Reviews */}
+      <Cast cast={cast} actorPhotosData={actorPhotosData} />
+      <Reviews reviews={reviews} />
     </div>
   );
 };
