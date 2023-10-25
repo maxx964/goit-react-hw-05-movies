@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Cast from 'components/Cast/Cast'; 
 import Reviews from 'components/Reviews/Reviews'; 
+import { TiArrowBackOutline } from 'react-icons/ti';
+
 
 import styles from './MovieDetails.module.css';
 
@@ -57,7 +59,7 @@ const MovieDetails = () => {
   return (
     <div className={styles.div}>
       <Link to="/" className={styles.backToHomeLink}>
-        Back to Home
+     <TiArrowBackOutline size={16} style={{ color: 'white' }} />Back to Home 
       </Link>
       <h1 className={styles.title}>{movieDetails.title}</h1>
       <p><b>Release Date:</b> {movieDetails.release_date}</p>

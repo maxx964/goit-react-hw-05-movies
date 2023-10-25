@@ -11,17 +11,16 @@
 
 .title {
     font-size: 32px;
-    margin: 10px 0;
     color: #333;
 }
 
-.poster {
+/* .poster {
     max-width: 100%;
     height: auto;
     margin: 20px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-}
+} */
 
 section {
     margin: 20px 0;
@@ -59,11 +58,12 @@ p {
 /* ============================================================ */
 
 .backToHomeLink {
-    display: inline-block;
-    margin-bottom: 10px;
-    padding: 8px 16px;
-    background-color: #02e15f;
-    color: #fff;
+    display: inline;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    background-color: #8b8989;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     border: none;
     border-radius: 4px;
@@ -71,7 +71,8 @@ p {
 }
 
 .backToHomeLink:hover {
-    background-color: #ce8a03;
+    background-color: #0442fd;
+    color: rgb(255, 255, 255);
 }
 
 
