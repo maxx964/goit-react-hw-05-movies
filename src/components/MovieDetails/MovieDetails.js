@@ -52,6 +52,7 @@ const MovieDetails = () => {
   if (!movieDetails) {
     return <div>Loading...</div>;
   }
+  const genres = movieDetails.genres.map((genre) => genre.name).join(', ');
 
   return (
     <div className={styles.div}>
@@ -59,16 +60,17 @@ const MovieDetails = () => {
         Back to Home
       </Link>
       <h1 className={styles.title}>{movieDetails.title}</h1>
+      <p><b>Release Date:</b> {movieDetails.release_date}</p>
       {movieDetails.poster_path && (
         <img
           src={`https://image.tmdb.org/t/p/w200${movieDetails.poster_path}`}
           alt={movieDetails.title}
         />
       )}
-      <p>Release Date: {movieDetails.release_date}</p>
-      <p>Rating: {movieDetails.vote_average}</p>
-      <p>Overview: {movieDetails.overview}</p>
-
+      <p><b>Rating:</b> {movieDetails.vote_average}</p>
+      <p><b>Overview:</b> {movieDetails.overview}</p>
+      <p><b>Genres:</b> {genres}</p>
+      <hr />
       <Cast cast={cast} actorPhotosData={actorPhotosData} />
       <Reviews reviews={reviews} />
     </div>
