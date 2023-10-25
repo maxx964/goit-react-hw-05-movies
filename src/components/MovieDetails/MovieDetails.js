@@ -7,7 +7,6 @@ import Reviews from 'components/Reviews/Reviews';
 
 import styles from './MovieDetails.module.css';
 
-
 const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const [cast, setCast] = useState([]);
@@ -18,19 +17,14 @@ const MovieDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-   
         const movieDetailsResponse = await axios.get(
           `https://api.themoviedb.org/3/movie/${movieId}?api_key=9a4b9e4760b7564e10a80d0c72f50665`
         );
         setMovieDetails(movieDetailsResponse.data);
-
-  
         const castResponse = await axios.get(
           `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=9a4b9e4760b7564e10a80d0c72f50665`
         );
         setCast(castResponse.data.cast);
-
- 
         const photosData = {};
         await Promise.all(
           castResponse.data.cast.map(async (actor) => {
@@ -43,8 +37,6 @@ const MovieDetails = () => {
           })
         );
         setActorPhotosData(photosData);
-
-  
         const reviewsResponse = await axios.get(
           `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=9a4b9e4760b7564e10a80d0c72f50665`
         );
