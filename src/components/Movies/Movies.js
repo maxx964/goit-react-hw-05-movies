@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { BiSearchAlt } from 'react-icons/bi';
 
 import styles from './Movies.module.css';
 
@@ -40,7 +41,9 @@ class Movies extends Component {
             value={this.state.query}
             onChange={this.handleSearchChange}
           />
-          <button onClick={this.searchMovies}>Search</button>
+          <button onClick={this.searchMovies}>
+            <BiSearchAlt size={36} style={{ color: 'white' }} /></button>
+  
         </div>
         <ul className={styles.movieList}>
           {this.state.movies.map((movie) => (
