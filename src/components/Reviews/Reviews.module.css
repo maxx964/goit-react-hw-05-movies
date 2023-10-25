@@ -1,0 +1,30 @@
+.reviews {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.reviews h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.reviews ul {
+    list-style: none;
+    padding: 0;
+}
+
+.reviews li {
+    margin-bottom: 20px;
+}
+
+.reviews h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.reviews p {
+    font-size: 14px;
+    line-height: 1.4;
+}

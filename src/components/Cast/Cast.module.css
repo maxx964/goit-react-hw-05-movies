@@ -1,0 +1,29 @@
+.cast {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.cast h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.castList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.castList li {
+    width: 150px;
+    margin: 10px;
+    text-align: center;
+}
+
+.castList img {
+    max-width: 100%;
+    border-radius: 50%;
+}
