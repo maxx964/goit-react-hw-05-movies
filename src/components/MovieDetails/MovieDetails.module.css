@@ -57,3 +57,29 @@ p {
     margin-top: 50px;
     color: #666;
 }
+
+/* ============================================================ */
+/* MovieDetails.module.css */
+
+/* Стилі для кнопки "Back to Home" */
+.backToHomeLink {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* Додайте відступ знизу */
+    padding: 8px 16px;
+    background-color: #02e15f;
+    /* Колір фону */
+    color: #fff;
+    /* Колір тексту */
+    text-decoration: none;
+    /* Видаліть підкреслення */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.backToHomeLink:hover {
+    background-color: #ce8a03;
+    /* Зміна кольору при наведенні */
+}

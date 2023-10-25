@@ -5,6 +5,7 @@ import Movies from './Movies/Movies';
 import MovieDetails from './MovieDetails/MovieDetails';
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
+
 import styles from './App.module.css'
 
 function App() {
