@@ -68,6 +68,7 @@ p {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    box-shadow: 3px 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .backToHomeLink:hover {
