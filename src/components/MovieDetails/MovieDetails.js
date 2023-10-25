@@ -59,19 +59,22 @@ const MovieDetails = () => {
   return (
     <div className={styles.div}>
       <Link to="/" className={styles.backToHomeLink}>
-     <TiArrowBackOutline size={16} style={{ color: 'white' }} />Back to Home 
+     <TiArrowBackOutline size={16} style={{ color: 'white' }} />Go back 
       </Link>
       <h1 className={styles.title}>{movieDetails.title}</h1>
+      <hr />
       <p><b>Release Date:</b> {movieDetails.release_date}</p>
       {movieDetails.poster_path && (
         <img
-          src={`https://image.tmdb.org/t/p/w200${movieDetails.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w300${movieDetails.poster_path}`}
           alt={movieDetails.title}
         />
       )}
       <p><b>Rating:</b> {movieDetails.vote_average}</p>
       <p><b>Overview:</b> {movieDetails.overview}</p>
       <p><b>Genres:</b> {genres}</p>
+      <hr />
+      <h2>Additional Information</h2>
       <hr />
       <Cast cast={cast} actorPhotosData={actorPhotosData} />
       <Reviews reviews={reviews} />
