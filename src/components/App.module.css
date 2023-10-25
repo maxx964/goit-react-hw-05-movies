@@ -26,8 +26,9 @@
 
 .menu li a {
     text-decoration: none;
-    color: #f2efef;
-    font-size: 28px;
+    color: #fcfafa;
+    font-size: 38px;
+    text-shadow: 3px -4px 5px black;
 }
 
 .menu li a:hover {
