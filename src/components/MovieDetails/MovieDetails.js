@@ -66,7 +66,7 @@ const MovieDetails = () => {
       <p><b>Release Date:</b> {movieDetails.release_date}</p>
       {movieDetails.poster_path && (
         <img
-          src={`https://image.tmdb.org/t/p/w400${movieDetails.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w300${movieDetails.poster_path}`}
           alt={movieDetails.title}
         />
       )}
