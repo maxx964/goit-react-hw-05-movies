@@ -83,3 +83,8 @@ p {
     background-color: #ce8a03;
     /* Зміна кольору при наведенні */
 }
+
+
+.div {
+    padding: 30px;
+}

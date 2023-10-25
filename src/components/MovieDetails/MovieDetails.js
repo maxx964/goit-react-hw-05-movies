@@ -54,7 +54,7 @@ const MovieDetails = () => {
   }
 
   return (
-    <div>
+    <div className={styles.div}>
       <Link to="/" className={styles.backToHomeLink}>
         Back to Home
       </Link>
