@@ -49,8 +49,6 @@ class Movies extends Component {
             </li>
           ))}
         </ul>
-        {/* Додайте <Route> для MovieDetails */}
-        {/* <Route path="/movies/:movieId" component={MovieDetails} /> */}
       </div>
     );
   }
