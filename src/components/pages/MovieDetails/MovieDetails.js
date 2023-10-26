@@ -4,10 +4,10 @@ import { useParams, Link } from 'react-router-dom';
 import { TiArrowBackOutline } from 'react-icons/ti';
 import { useNavigate } from 'react-router-dom';
 
-import styles from './MovieDetails.module.css';
+import styles from './MovieDetails.module.css'
 
-const Cast = lazy(() => import('../Cast/Cast'));
-const Reviews = lazy(() => import('../Reviews/Reviews'));
+const Cast = lazy(() => import('../Cast/Cast')); 
+const Reviews = lazy(() => import('../Reviews/Reviews')); 
 
 const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null);
