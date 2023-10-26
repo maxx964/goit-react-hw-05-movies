@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './Home.module.css';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -26,12 +26,20 @@ const Home = () => {
   }, []);
 
   return (
-      <div className={styles.home}>
-      <h2>Trending today</h2>
+    <div className={styles.home}>
+      <h2 className={styles.title}>Trending today</h2>
       <ul className={styles.movieList}>
         {trendingMovies.map((movie) => (
           <li key={movie.id} className={styles.movieItem}>
-            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+            <Link to={`/movies/${movie.id}`} className={styles.movieLink}>
+              <div className={styles.moviePoster}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`}
+                  alt={movie.title}
+                />
+              </div>
+              <p className={styles.movieTitle}>{movie.title}</p>
+            </Link>
           </li>
         ))}
       </ul>

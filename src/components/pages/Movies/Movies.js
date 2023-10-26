@@ -56,8 +56,16 @@ class Movies extends Component {
         </div>
         <ul className={styles.movieList}>
           {this.state.movies.map((movie) => (
-            <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+            <li key={movie.id} className={styles.movieItem}>
+              <Link to={`/movies/${movie.id}`} className={styles.movieLink}>
+                <div className={styles.moviePoster}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                </div>
+                <p className={styles.movieTitle}>{movie.title}</p>
+              </Link>
             </li>
           ))}
         </ul>
