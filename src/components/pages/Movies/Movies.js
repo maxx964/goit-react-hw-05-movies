@@ -28,7 +28,6 @@ class Movies extends Component {
       }
       const data = await response.json();
       const movies = data.results;
-      
       localStorage.setItem('searchedMovies', JSON.stringify(movies));
       this.setState({ movies });
     } catch (error) {

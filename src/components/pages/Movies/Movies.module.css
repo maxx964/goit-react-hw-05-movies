@@ -1,5 +1,5 @@
 .movies {
-    max-width: 1200px;
+    width: 350px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -47,5 +47,3 @@ button:hover {
     font-size: 18px;
     margin: 10px 0;
 }
-
-/* Додайте більше стилів за потреби */

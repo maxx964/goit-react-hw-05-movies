@@ -1,5 +1,3 @@
-/* App.module.css */
-
 .container {
     display: flex;
     flex-direction: column;
@@ -9,9 +7,6 @@
 .nav {
     width: 100%;
     background-color: blue;
-    /* padding-left: 20px;
-    padding-right: 20px; */
-
 
 }
 
@@ -20,6 +15,7 @@
     list-style: none;
     padding: 0;
     justify-content: center;
+
 }
 
 .menu li {
@@ -35,11 +31,6 @@
 
 .menu li a:hover {
     text-decoration: underline;
-}
-
-/* Це стилі для "Movies" і "Home", ви можете налаштувати їх за своїми уподобаннями */
-.page {
-    /* Ваші стилі для "Movies" і "Home" */
 }
 
 .menuLink {
