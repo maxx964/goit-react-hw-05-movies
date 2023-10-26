@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import Cast from 'components/Cast/Cast'; 
-import Reviews from 'components/Reviews/Reviews'; 
+import { useParams, Link } from 'react-router-dom';
+import Cast from 'components/Cast/Cast';
+import Reviews from 'components/Reviews/Reviews';
 import { TiArrowBackOutline } from 'react-icons/ti';
-
+import { useNavigate } from 'react-router-dom';
 
 import styles from './MovieDetails.module.css';
 
@@ -15,6 +14,7 @@ const MovieDetails = () => {
   const [actorPhotosData, setActorPhotosData] = useState({});
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,10 +56,14 @@ const MovieDetails = () => {
   }
   const genres = movieDetails.genres.map((genre) => genre.name).join(', ');
 
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className={styles.div}>
-      <Link to="/" className={styles.backToHomeLink}>
-     <TiArrowBackOutline size={16} style={{ color: 'white' }} />Go back 
+      <Link to="/" className={styles.backToHomeLink} onClick={handleGoBack}>
+        <TiArrowBackOutline size={16} style={{ color: 'white' }} />Go back
       </Link>
       <h1 className={styles.title}>{movieDetails.title}</h1>
       <hr />
