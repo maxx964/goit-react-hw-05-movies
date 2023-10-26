@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
-import Cast from 'components/Cast/Cast';
-import Reviews from 'components/Reviews/Reviews';
 import { TiArrowBackOutline } from 'react-icons/ti';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './MovieDetails.module.css';
+
+const Cast = lazy(() => import('../Cast/Cast'));
+const Reviews = lazy(() => import('../Reviews/Reviews'));
 
 const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -80,8 +81,10 @@ const MovieDetails = () => {
       <hr />
       <h2>Additional Information</h2>
       <hr />
-      <Cast cast={cast} actorPhotosData={actorPhotosData} />
-      <Reviews reviews={reviews} />
+      <Suspense fallback={<div>Loading Cast and Reviews...</div>}>
+        <Cast cast={cast} actorPhotosData={actorPhotosData} />
+        <Reviews reviews={reviews} />
+      </Suspense>
     </div>
   );
 };

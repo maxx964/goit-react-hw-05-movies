@@ -11,7 +11,6 @@ class Movies extends Component {
   };
 
   componentDidMount() {
-    // Перевірити, чи є збережені фільми в localStorage і використовувати їх
     const savedMovies = localStorage.getItem('searchedMovies');
     if (savedMovies) {
       this.setState({ movies: JSON.parse(savedMovies) });
@@ -29,10 +28,8 @@ class Movies extends Component {
       }
       const data = await response.json();
       const movies = data.results;
-
-      // Зберегти список фільмів в localStorage
+      
       localStorage.setItem('searchedMovies', JSON.stringify(movies));
-
       this.setState({ movies });
     } catch (error) {
       console.error('Error fetching search results:', error);

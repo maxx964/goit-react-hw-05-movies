@@ -1,42 +1,46 @@
 import React from 'react';
 import { Link, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home/Home';
-import Movies from './Movies/Movies';
-import MovieDetails from './MovieDetails/MovieDetails';
-import Cast from './Cast/Cast';
-import Reviews from './Reviews/Reviews';
 
-import styles from './App.module.css'
+import styles from './App.module.css';
+
+const Home = React.lazy(() => import('./Home/Home'));
+const Movies = React.lazy(() => import('./Movies/Movies'));
+const MovieDetails = React.lazy(() => import('./MovieDetails/MovieDetails'));
+const Cast = React.lazy(() => import('./Cast/Cast'));
+const Reviews = React.lazy(() => import('./Reviews/Reviews'));
 
 function App() {
   return (
     <Router>
-     <div className={styles.container}>
+      <div className={styles.container}>
         <nav className={styles.nav}>
-           <ul className={styles.menu}>
+          <ul className={styles.menu}>
             <li>
               <Link to="/" className={styles.menuLink}>
-        Home
-      </Link>
+                Home
+              </Link>
             </li>
             <li>
               <Link to="/movies" className={styles.menuLink}>
-        Movies
-      </Link>
+                Movies
+              </Link>
             </li>
           </ul>
         </nav>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/movies/:movieId" element={<MovieDetails />}>
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
-          </Route>
-        </Routes>
+            </Route>
+          </Routes>
+        </React.Suspense>
       </div>
     </Router>
   );
 }
 
 export default App;
+
