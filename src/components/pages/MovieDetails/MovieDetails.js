@@ -9,6 +9,8 @@ import styles from './MovieDetails.module.css'
 const Cast = lazy(() => import('../Cast/Cast')); 
 const Reviews = lazy(() => import('../Reviews/Reviews')); 
 
+const defaultImg = 'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
+
 const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const [cast, setCast] = useState([]);
@@ -36,6 +38,8 @@ const MovieDetails = () => {
             );
             if (actorDetails.data.profile_path) {
               photosData[actor.id] = actorDetails.data.profile_path;
+            } else {
+              photosData[actor.id] = defaultImg;
             }
           })
         );
@@ -69,12 +73,12 @@ const MovieDetails = () => {
       <h1 className={styles.title}>{movieDetails.title}</h1>
       <hr />
       <p><b>Release Date:</b> {movieDetails.release_date}</p>
-      {movieDetails.poster_path && (
-        <img
-          src={`https://image.tmdb.org/t/p/w300${movieDetails.poster_path}`}
-          alt={movieDetails.title}
-        />
-      )}
+      <img 
+            src={movieDetails.poster_path ? `https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}` : defaultImg}
+            alt="poster"
+            className="movie-poster"
+        style={{ maxWidth: '400px'}}
+          />
       <p><b>Rating:</b> {movieDetails.vote_average}</p>
       <p><b>Overview:</b> {movieDetails.overview}</p>
       <p><b>Genres:</b> {genres}</p>

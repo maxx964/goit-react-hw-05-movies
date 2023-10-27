@@ -1,39 +1,41 @@
-.container {
+ /* .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
+    align-items: center; */
 
-.nav {
-    width: 100%;
-    background-color: rgb(135, 135, 138);
-    box-shadow: 3px 4px 8px 0 rgba(0, 0, 0, 0.2);
 
-}
+ .nav {
+     padding: 20px;
+     width: 100%;
+     background-color: rgb(135, 135, 138);
+     box-shadow: 3px 4px 8px 0 rgba(0, 0, 0, 0.2);
 
-.menu {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    justify-content: center;
+ }
 
-}
+ .menu {
+     display: flex;
+     list-style: none;
+     padding: 0;
+     justify-content: center;
 
-.menu li {
-    margin: 0 10px;
-}
+ }
 
-.menu li a {
-    text-decoration: none;
-    color: #fcfafa;
-    font-size: 38px;
-    text-shadow: 3px -4px 5px black;
-}
+ .menu li {
+     margin: 10px;
+ }
 
-.menu li a:hover {
-    text-decoration: underline;
-}
+ .menu li a {
+     text-decoration: none;
+     color: #fcfafa;
+     font-size: 38px;
+     text-shadow: 3px -4px 5px black;
+ }
 
-.menuLink {
-    font-family: 'Sedgwick Ave Display', cursive;
-}
+ .menu li a:hover {
+     text-decoration: underline;
+ }
+
+
+ .menuLink {
+     font-family: 'Sedgwick Ave Display', cursive;
+ }

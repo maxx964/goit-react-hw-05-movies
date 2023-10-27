@@ -15,16 +15,29 @@ code {
     monospace;
 }
 
+h1 {
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
 a {
   text-decoration: none;
 }
 
-a {
-  color: black;
-  font-size: 20px;
+
+ul {
+  list-style: none;
+  margin: 0;
 }
 
-a:hover {
-  color: blue;
+p {
+  font-size: 24px;
 
+}
+
+.movie-poster {
+
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }

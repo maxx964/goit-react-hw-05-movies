@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import MoviesList from '../MovieList/MoviesList';
 
 import styles from './Home.module.css';
 
@@ -13,7 +13,7 @@ const Home = () => {
           'https://api.themoviedb.org/3/trending/movie/week?api_key=9a4b9e4760b7564e10a80d0c72f50665'
         );
         if (!response.ok) {
-          throw  Error('Network response was not ok');
+          throw new Error('Network response was not ok');
         }
         const data = await response.json();
         setTrendingMovies(data.results);
@@ -28,21 +28,7 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <h2 className={styles.title}>Trending today</h2>
-      <ul className={styles.movieList}>
-        {trendingMovies.map((movie) => (
-          <li key={movie.id} className={styles.movieItem}>
-            <Link to={`/movies/${movie.id}`} className={styles.movieLink}>
-              <div className={styles.moviePoster}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`}
-                  alt={movie.title}
-                />
-              </div>
-              <p className={styles.movieTitle}>{movie.title}</p>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <MoviesList movies={trendingMovies} basePath="/movies" />
     </div>
   );
 };
