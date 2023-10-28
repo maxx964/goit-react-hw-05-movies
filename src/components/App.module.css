@@ -1,9 +1,3 @@
- /* .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; */
-
-
  .nav {
      padding: 20px;
      width: 100%;
@@ -38,4 +32,5 @@
 
  .menuLink {
      font-family: 'Sedgwick Ave Display', cursive;
+
  }
